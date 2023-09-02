@@ -1,0 +1,19 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+alert ("Сейчас будем считать рост Вашего вклада. ")
+
+var deposit = +prompt("Введите размер вклада, руб.: ");
+var percent = +prompt("Введите процентную ставку, %: ");
+var oYear = 2023;
+
+for (var year = 1; year <= 5 ; year++){
+
+				var deposit_result = deposit + (deposit*percent/100)*year
+				var realYear = oYear + year;
+
+
+				alert ("Размер Вашего вклада в " + realYear + " году: "+deposit_result + " рублей.") 
+
+				}
+</script> 
