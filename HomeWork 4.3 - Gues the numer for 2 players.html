@@ -1,0 +1,42 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+
+
+var answer = parseInt (Math.random ()*100);
+var playernumber = 1;
+var userAnswer = prompt( "Gues the number from 0 to 100. \nХодит игрок: " + playernumber + "\nДля выхода введите: выход " );
+
+
+
+while(true){
+
+	if (userAnswer == "выход") {
+		alert("Congradulations");
+		break;
+		}
+	
+	userAnswer = parseInt(userAnswer);
+
+			if (playernumber == 1){
+			playernumber = 2;}
+			else {playernumber = 1;}
+	
+	if (userAnswer > answer) {
+		userAnswer = prompt( "Ваше число маленькое. Неверно. \n Теперь Ходит игрок: " + playernumber + "\nДля выхода введите: выход " );
+
+		}
+
+	if (userAnswer < answer) {
+		userAnswer = prompt( "Ваше число большое. Неверно. \n Теперь Ходит игрок: " + playernumber + "\nДля выхода введите: выход " );
+
+		}
+
+		if (playernumber == 1){
+			playernumber = 2;}
+			else {playernumber = 1;}
+}
+
+alert("Game is over. ");
+
+</script> 
