@@ -1,19 +1,35 @@
 <meta charset="utf-8">
 <script type="text/javascript">
-	
-alert ("Сейчас будем считать рост Вашего вклада. ")
 
-var deposit = +prompt("Введите размер вклада, руб.: ");
-var percent = +prompt("Введите процентную ставку, %: ");
-var oYear = 2023;
+let oYear = 2023;	
 
-for (var year = 1; year <= 5 ; year++){
+function checkTheNumber (Enter) {
+	if (isNaN(Enter) == true) {
+		do {
+			Enter = prompt("Вы ввели некорректные данные. Введите числовое значение: ");
+		} while (isNaN(Enter) == true);
+	}
+		return Enter;
+	}
 
-				var deposit_result = deposit + (deposit*percent/100)*year
-				var realYear = oYear + year;
+function roundNumber (number) {
+	return number.toFixed(2);
+}	
+
+alert ("Сейчас будем считать рост Вашего вклада.")
+
+let deposit = +prompt("Введите размер вклада, руб.:");
+deposit = checkTheNumber(deposit);
+
+let percent = +prompt("Введите процентную ставку, %:");
+percent = checkTheNumber(percent);
+
+for (let year = 1; year <= 5; year++) {
+	let depositResult = deposit + (deposit*percent/100)*year
+	let realYear = oYear + year;
+	depositResult = roundNumber (depositResult)
+	alert (`Размер Вашего вклада в ${realYear} году:  ${depositResult}  рублей.`) ;
+	}
 
 
-				alert ("Размер Вашего вклада в " + realYear + " году: "+deposit_result + " рублей.") 
-
-				}
 </script> 
