@@ -1,0 +1,35 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+let oYear = 2023;	
+
+function checkTheNumber (Enter) {
+	if (isNaN(Enter) == true) {
+		do {
+			Enter = prompt("Вы ввели некорректные данные. Введите числовое значение: ");
+		} while (isNaN(Enter) == true);
+	}
+		return Enter;
+	}
+
+function roundNumber (number) {
+	return number.toFixed(2);
+}	
+
+alert ("Сейчас будем считать рост Вашего вклада.")
+
+let deposit = +prompt("Введите размер вклада, руб.:");
+deposit = checkTheNumber(deposit);
+
+let percent = +prompt("Введите процентную ставку, %:");
+percent = checkTheNumber(percent);
+
+for (let year = 1; year <= 5; year++) {
+	let depositResult = deposit + (deposit*percent/100)*year
+	let realYear = oYear + year;
+	depositResult = roundNumber (depositResult)
+	alert (`Размер Вашего вклада в ${realYear} году:  ${depositResult}  рублей.`) ;
+	}
+
+
+</script> 
